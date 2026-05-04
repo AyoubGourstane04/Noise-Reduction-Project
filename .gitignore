@@ -1,0 +1,68 @@
+# =========================
+# Python
+# =========================
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.so
+
+# =========================
+# Virtual environments
+# =========================
+venv/
+.env/
+.envrc
+
+# =========================
+# Jupyter
+# =========================
+.ipynb_checkpoints/
+
+# =========================
+# VSCode
+# =========================
+.vscode/
+
+# =========================
+# OS files
+# =========================
+.DS_Store
+Thumbs.db
+
+# =========================
+# Logs
+# =========================
+*.log
+
+# =========================
+# Dataset (VERY IMPORTANT)
+# =========================
+# Ignore entire data directory (everything inside it)
+data/
+
+# Ignore audio files anywhere in the project
+*.wav
+*.mp3
+*.flac
+
+# # =========================
+# # Trained models / weights
+# # =========================
+# models/
+# *.h5
+# *.keras
+# *.ckpt
+# *.pb
+
+# =========================
+# Temporary / cache
+# =========================
+*.cache
+*.tmp
+
+# =========================
+# Outputs / experiments
+# =========================
+results/
+outputs/
