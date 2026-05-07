@@ -1,3 +1,5 @@
+from math import remainder
+
 import numpy as np
 import librosa
 import os
@@ -48,10 +50,12 @@ class FeatureExtractor:
         _, time_frames = mag_normalized.shape
         chunks = []
         
-        if time_frames < chunk_width:
-            pad_amount = chunk_width - time_frames
+        remainder = time_frames % chunk_width
+        
+        if remainder != 0:
+            pad_amount = chunk_width - remainder
             mag_normalized = np.pad(mag_normalized, ((0,0), (0, pad_amount)), mode='constant', constant_values=0)
-            time_frames = chunk_width  
+            time_frames = mag_normalized.shape[1] 
         
         for i in range(0, time_frames - chunk_width + 1, chunk_width):
             chunk = mag_normalized[:, i : i + chunk_width]
